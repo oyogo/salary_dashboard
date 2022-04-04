@@ -1,0 +1,68 @@
+
+#banner {
+    width: 100%;
+    height: 50px;
+    position: inherit;
+    font-family: Lato;
+    font-size: 6rem;
+    font-weight: bold;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 4rem;
+    color: white;
+    background-image: url('salaryimage.jpeg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 60%;
+    border-bottom-left-radius: 10% 10%;
+    border-bottom-right-radius: 10% 10%;
+}
+
+body {
+  background-color: #8ae9b3;
+  background-image: linear-gradient(315deg, #8ae9b3 0%, #c8d6e5 74%);
+  color: white; /* text color */
+}
+
+.ui.attached.menu {
+    align-content: center;
+}
+
+.ui.tabular.menu .item {
+    background: rgba(1,1,1,0.6);
+    color: white;
+}
+
+.ui.tabular.menu .item:hover {
+    background: rgba(1,1,1,1);
+    color: white;
+}
+
+.ui.tab.bottom.attached.segment.active {
+    background: #304352;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #d7d2cc, #304352);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #d7d2cc, #304352); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    margin-top: 2px;
+}
+
+/* to  try  */  
+
+/*  background: #8e9eab;  /* fallback for old browsers */
+/* background: -webkit-linear-gradient(to right, #eef2f3, #8e9eab);  /* Chrome 10-25, Safari 5.1-6 */
+/* background: linear-gradient(to right, #eef2f3, #8e9eab); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+
+.card_grey {
+  background: #DCDCDC;
+  padding: 28px;
+  margin-bottom: 28px;
+  border-radius: 15px;
+  background-clip: padding-box;
+  font-size: 1.2em;
+  color: black;
+}
+
+
+
+
