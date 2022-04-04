@@ -29,31 +29,22 @@ ui <- shiny.semantic::semanticPage(
                   div(class = "ui two column grid",
                       div(
                         class = "six wide column",
-                        
+                        br(),
                         div(
-                          class = "row",
-                          
-                          # div(
-                          #   class = "ui statistic",
-                          #   div(
-                          #     class = "value",
-                          #     h2("87,236")
-                          #   ),
-                          #   div(
-                          #     class = "label",
-                          #    h3("Records submitted as of: ",Sys.time())
-                          #   )
-                          # )
-                          
+                          class = "ui centered grid",
+                       
                           div(
-                            class = "ui circular segment",
+                            class = "ui grey inverted circular segment",
+                            div( class = "ui statistic",
                             div(
-                              class = "ui header",
-                              "8975"
+                              class = "value",
+                              h1("8975")
                             ),
-                            div(
-                              class = "sub header",
-                              "Number of submitted records"
+                            #div(
+                              #class = "sub header",
+                              div( class = "label",
+                              paste0("Number of submitted records as of: ", Sys.Date() )
+                              )
                             )
                           )
                        
@@ -65,12 +56,10 @@ ui <- shiny.semantic::semanticPage(
                           plotlyOutput("gender_comparison.plot", height = "280px")
                           )
                         ),
-                        br(),
                         div(
                           class = "row",
                           div( class = "card_grey",
-                          #plotlyOutput("edulevel.plot")
-                          plotlyOutput('spiderD')
+                               plotlyOutput('spiderD') 
                           )
                         )
                         
@@ -82,36 +71,34 @@ ui <- shiny.semantic::semanticPage(
                         div(
                           class = "row",
                           div( class = "card_grey",
-                          plotlyOutput("bestpaying_industry.plot", height = "480px")
+                          plotlyOutput("bestpaying_industry.plot", height = "517px")
                           )
                         ),
-                        br(),
                         div(
                           class = "row",
-                          
-                          
-                          
-                          div(
-                            class = "ui two column grid",
+                        
+                           div(
+                             class = "ui two column grid",
+                            
+                             div(
+                               class = "column",
+                              div( class = "card_grey",
+                                   plotlyOutput("experience_yrs.plot")
+                              )
+                            ),
                             
                             div(
                               class = "column",
                               div( class = "card_grey",
-                              plotlyOutput("experience_yrs.plot")
-                              )
-                            ),
-                            div(
-                              class = "column",
-                              div( class = "card_grey",
-                              plotlyOutput("age_industry.plot")
-                              
+                                   plotlyOutput("age_industry.plot")
+                                   
                               )
                             )
+                            
                           )
                         )
                         
-                       
-                        
+            
                       )
                     
                   )

@@ -96,7 +96,7 @@ server <- function(input,output,session){
             type = "scatter",
             line = list(color = "pink", width = 5),
             mode = "lines+markers") %>%
-      layout(title="Does an increase in professional years of experience result to more salary?", 
+      layout(title="Professional years of experience and salary?", 
              font = list(size=10, family = "Gravitas One"),
              yaxis = list(title = "Average annual salary", tickformat = "$", showgrid=FALSE),
              xaxis = list(title = "Professional years of experience", showgrid=FALSE),
@@ -162,42 +162,45 @@ server <- function(input,output,session){
     )
     
     #salary.edulevel <- 
-    data.salary <-  data.salary[,.(avg.salary=mean(annual_salary)),by=.(highest_edu_level)] #%>%
-      # dplyr::filter(degr.rank == max(degr.rank)) %>%
-      # filter(variable == "Soil fertility constraints" & degr.index > 20) %>%
-      #arrange(-avg.salary) 
-        
-        plot_ly(data.salary,
+   radar.df <-  data.salary[,.(avg.salary=mean(annual_salary)),by=.(highest_edu_level)]# %>% #arrange(-avg.salary) %>%
+     radar.df %>%  arrange(-avg.salary) %>%  
+     plot_ly(#data.salary,
           
           type = 'scatterpolar',
           
-          r = ~data.salary$avg.salary,
+          r = ~round(radar.df$avg.salary,0),
           
-          theta = ~reorder(data.salary$highest_edu_level, -data.salary$avg.salary),
+          theta = ~radar.df$highest_edu_level,
           
           fill = 'toself',
-          text = ~ paste0("Level of education: ", data.salary$highest_edu_level,"\n", "Average annual salary: ", data.salary$avg.salary),
+          text = ~ paste0("Level of education: ", radar.df$highest_edu_level,"\n", "Average annual salary: ", round(radar.df$avg.salary)),
           hoverinfo = "text"
           
         )  %>%
         
         layout(
-          
+          title = "Which level of education attracts more salary",
+          font = f,
           polar = list(
             
             radialaxis = list(
-              
+              tickformat = "$",
               visible = T,
               
-              range = c(0,max(data.salary$avg.salary))
+              range = c(0,max(radar.df$avg.salary))
               
             )
             
           ),
-          
+          plot_bgcolor  = "rgba(0, 0, 0, 0)",
+          paper_bgcolor = "rgba(0, 0, 0, 0)",
+          fig_bgcolor   = "rgba(0, 0, 0, 0)",
           showlegend = F
           
-        )
+        ) %>%
+       config(displayModeBar = FALSE, displaylogo = FALSE, 
+              scrollZoom = FALSE, showAxisDragHandles = TRUE, 
+              showSendToCloud = FALSE)
         
         
       # plot_ly(
