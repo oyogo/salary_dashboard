@@ -3,7 +3,11 @@ data.salary  <- fread("./../salary_analysis/data/salary_data_cleaned.csv")
 
 server <- function(input,output,session){
   
-  
+  output$records <- semantic.dashboard::renderInfoBox({
+    
+    count.records <- data.salary[,.(count=.N)]
+    count.records$count
+  })
   
   output$bestpaying_industry.plot <- renderPlotly({
     
@@ -202,61 +206,9 @@ server <- function(input,output,session){
               scrollZoom = FALSE, showAxisDragHandles = TRUE, 
               showSendToCloud = FALSE)
         
-        
-      # plot_ly(
-      #   type = "scatterpolar",
-      #   mode = "lines+markers",
-      #   colors = "RdYlGn",
-      #   name = ~highest_edu_level
-      # ) %>%
-      # add_trace(
-      #   r = ~ avg.salary,
-      #   theta = ~highest_edu_level,
-      #   color = ~highest_edu_level,
-      #   fill = "toself",
-      #   text = ~ paste0("Average salary for ", highest_edu_level, " is $", avg.salary),
-      #   hoverinfo = "text"
-      # ) %>%
-      # layout(
-      #   showlegend = FALSE,
-      #   font = f,
-      #   plot_bgcolor = "rgba(0, 0, 0, 0)",
-      #   paper_bgcolor = "rgba(0, 0, 0, 0)",
-      #   polar = list(
-      #     radialaxis = list(
-      #       range = c(0, 1000000),
-      #       angle = 90,
-      #       tickangle = 90,
-      #       color = "red",
-      #       size = 20
-      #     ),
-      #     angularaxis = list(
-      #       rotation = 90,
-      #       direction = "clockwise",
-      #       size = 26
-      #     )
-      #   )#,
-      #   # images = list(
-      #   #   list(
-      #   #     source = paste("data:image/png;base64", img.plot, sep = ","),
-      #   #     xref = "paper",
-      #   #     yref = "paper",
-      #   #     x = 0.4,
-      #   #     y = 0.7,
-      #   #     sizex = 0.5,
-      #   #     sizey = 0.5,
-      #   #     opacity = 0.7
-      #   #   )
-      #   # )
-      # ) %>%
-      # config(
-      #   displayModeBar = FALSE,
-      #   displaylogo = FALSE,
-      #   scrollZoom = FALSE,
-      #   showAxisDragHandles = TRUE,
-      #   showSendToCloud = FALSE
-      # )
   }) 
   
-  
+ 
+  callModule(mod_model_server, "model_ui_1")
+   
 }

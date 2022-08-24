@@ -2,8 +2,11 @@
 library(shiny.semantic)
 library(semantic.dashboard)
 library(data.table)
-library(googlesheets4)
+library(DT)
+#library(googlesheets4)
 library(plotly)
+
+source("R/mod_model.R")
 
 ui <- shiny.semantic::semanticPage(
   
@@ -38,7 +41,8 @@ ui <- shiny.semantic::semanticPage(
                             div( class = "ui statistic",
                             div(
                               class = "value",
-                              h1("8975")
+                              #h1("8975")
+                              infoBoxOutput('records')
                             ),
                             #div(
                               #class = "sub header",
@@ -99,15 +103,16 @@ ui <- shiny.semantic::semanticPage(
                         )
                         
             
-                      )
+                     ) 
                     
                   )
                 )
             ),
             list(
               menu=div("Prediction"),
-              content=
-                h3("Predictions")
+              content= div( 
+              mod_model_ui('model_ui_1')
+              )
             )
           )
         )
