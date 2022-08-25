@@ -1,0 +1,8 @@
+file: test_data.csv
+file_size: 329800
+pin_hash: 1e7f760fe29978c6
+type: csv
+title: 'test_data: a pinned 6555 x 5 data frame'
+description: ~
+created: 20220722T091720Z
+api_version: 1.0

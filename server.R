@@ -1,5 +1,5 @@
 
-data.salary  <- fread("./../salary_analysis/data/salary_data_cleaned.csv")
+data.salary  <- fread("./data/salary_data_cleaned.csv")
 
 server <- function(input,output,session){
   

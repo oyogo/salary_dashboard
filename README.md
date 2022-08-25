@@ -1,6 +1,8 @@
 
 # Salary analysis dashboard    
 ![](www/sal_dash.png)  
+To interact with the dashboard click [here.](https://glacial-crag-20350.herokuapp.com/)     
+
 ## Background   
 The mention of salary sparks a myriad questions in all who are in some kind of employment or who look forward to it. You can with certainty tell that every other learner in some college/high school wants to land in a well paying job, but then, which is that job? There are those in employment who are desiring to get more papers, one of the motivations without a doubt is more salary, again, whats the margin of increment in comparison to perhaps having more years of experience which equally leads to more salary. 
 Such are questions that can largely be addressed through data analytics. With data, we can not only have insights into the different factors that inform the differences in salary , but we can also, given those factors, predict what one could potentially earn.    

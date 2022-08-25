@@ -1,0 +1,8 @@
+file: logistic_glm_model.rds
+file_size: 922050
+pin_hash: 9c7226876e59a0e5
+type: rds
+title: 'logistic_glm_model: a pinned list'
+description: ~
+created: 20220722T091719Z
+api_version: 1.0
