@@ -23,7 +23,7 @@ ui <- shiny.semantic::semanticPage(
       tagList(
         tabset(
           id = "menu",
-          menu_class = "ui top attached tabular menu",
+          menu_class = "ui tabular menu",
           list(
             list(
               menu=div("Exploratory data analysis"), 

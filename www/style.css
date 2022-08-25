@@ -38,6 +38,7 @@ body {
     color: white;
 }
 
+
 .ui.tab.bottom.attached.segment.active {
     background: #304352;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to right, #d7d2cc, #304352);  /* Chrome 10-25, Safari 5.1-6 */
