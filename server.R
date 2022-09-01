@@ -7,6 +7,7 @@ server <- function(input,output,session){
     
     count.records <- data.salary[,.(count=.N)]
     count.records$count
+    
   })
   
   output$bestpaying_industry.plot <- renderPlotly({
